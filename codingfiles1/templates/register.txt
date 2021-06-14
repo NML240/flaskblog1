@@ -1,0 +1,42 @@
+<!--
+<!DOCTYPE html>
+{% extends "layout.html" %}
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="register.css"/>
+         title is register This line is a comment 
+       <title> {% block title %} {{title}} {% endblock title %} </title>
+    </head>  
+    <body>
+        {% block content %}  
+        
+        <form action="/register" id="register_forms" method="POST"> {{ form.csrf_token }} 
+       shows how to format https://stackoverflow.com/questions/16379187/spacing-between-form-fields/16379203 this line is a comment        
+            <label="username">
+                Username   
+               {{(form.username)}}
+            </label> 
+            
+            <label for="email">
+                Email
+                {{form.email}}
+            </label>
+
+            <label for="password">  
+                Password
+                {{form.password}} 
+            </label> 
+            
+            <label for="password_form">
+                Confirm Password
+                {{form.confirm_password}}
+            </label>
+            
+            <label>
+                <input type="submit" value="Submit">
+            </label> 
+        </form>
+        {% endblock content %}
+    </body>       
+</html>
+-->   

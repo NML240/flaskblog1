@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% if title %}
+<title> flashblog {{+ title}} </title>
+    <!-- The title will say home -->
+    {% else %} 
+           {{ 'home' }}
+    {% endif %}
+</head>
+<body>  
+    <!-- From flashmessage.html -->
+    {% block flash_msg %}   
+    {% endblock flash_msg %}
+
+    {% block content %} 
+    {% endblock content %}
+       <form> 
+            <ul>
+                <li> <a href="{{ url_for ('users.home') }}">home </a></li>
+                <li> <a href="{{ url_for ('users.about') }}">about </a></li>
+            {% if current_user.is_authenticated %}
+                <li> <a href="{{ url_for ('users.logoff') }}">logoff </a></li>
+                <li> <a href="{{ url_for ('users.post')}}">post </a></li>
+            <!-- if  current user not logged on -->
+            {% else %}
+                <li> <a href="{{ url_for ('users.login') }}">login </a></li>
+                <li> <a href="{{ url_for ('users.register')}}">register </a></li>  
+            </ul>
+        </form> 
+            {% endif %}
+</body>
+</html>

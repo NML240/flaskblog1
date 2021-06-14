@@ -1,0 +1,15 @@
+{% macro %}
+    <form> 
+        <ul>
+            <li> <a href="{{ url_for ('home') }}">home </a></li>
+            <li> <a href="{{ url_for ('about') }}">about </a></li>
+    {% if not current_user.is_authenticated %}
+            <li> <a href="{{ url_for ('logoff') }}">logoff </a></li>
+            <li> <a href="{{ url_for ('post')}}">post </a></li>    
+    {% else %}
+            <li> <a href="{{ url_for ('login') }}">login </a></li>
+            <li> <a href="{{ url_for ('register')}}">register </a></li>
+        </ul>
+    </form>
+    {% endif %}
+{% endmacro %}
