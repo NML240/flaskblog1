@@ -1,0 +1,11 @@
+{% extends "layout.html" %} 
+<!-- title is flashblog -->
+{%block title %} {{title}} {%endblock title%} 
+
+{% block content %}
+<form action="/login" id="login_forms" method="GET"> 
+ 
+  {% for key, values in posts.items() %}
+  <p> {{values}}</p>
+  {% endfor%}
+{% endblock content %}
